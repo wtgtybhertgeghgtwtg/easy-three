@@ -1,0 +1,37 @@
+{
+  "author": {
+    "email": "wtgtybhertgeghgtwtg@gmail.com",
+    "name": "Matthew Fernando Garcia"
+  },
+  "bugs": {
+    "url": "https://github.com/wtgtybhertgeghgtwtg/easy-three/issues"
+  },
+  "dependencies": {
+    "death": "^1.1.0",
+    "env-and-files": "^5.0.2",
+    "isobject": "^3.0.1",
+    "p-try": "^1.0.0",
+    "pino": "^4.15.0"
+  },
+  "description": "Initialize an application.",
+  "devDependencies": {
+    "semantic-release": "^15.1.4",
+    "semantic-release-monorepo": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "name": "easy-three",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wtgtybhertgeghgtwtg/easy-three/tree/master/packages/easy-three"
+  },
+  "scripts": {},
+  "version": "0.0.0-semantic-release"
+}
