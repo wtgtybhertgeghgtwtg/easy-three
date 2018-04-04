@@ -55,11 +55,10 @@
   "scripts": {
     "build": "node scripts/build",
     "clean": "rimraf coverage packages/*/dist",
-    "lint": "eslint . && prettier --l \"{examples,packages}/*/{src,__tests__}/**/*.js\"",
+    "lint": "eslint . && flow && prettier --l \"{examples,packages}/*/{src,__tests__}/**/*.js\"",
     "test": "jest --config ./scripts/jest/config.source.js",
     "test-dist": "jest --config ./scripts/jest/config.dist.js"
   },
-  "version": "0.0.0-semantic-release",
   "workspaces": [
     "{examples,packages}/*"
   ]
