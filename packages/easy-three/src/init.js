@@ -8,12 +8,12 @@ import pTry from 'p-try';
 import pino from 'pino';
 import type {Config, Logger} from './types';
 
+type Shutdown = (signal?: string, error?: Error) => void | Promise<void>;
+
 type Start<CMap: ConfigMap> = (
   config: Config<CMap>,
   logger: Logger,
 ) => Shutdown | Promise<Shutdown>;
-
-type Shutdown = () => void | Promise<void>;
 
 export default function init<CMap: ConfigMap>(
   configMap: CMap,
@@ -46,7 +46,9 @@ export default function init<CMap: ConfigMap>(
             '"start" should return a function or a Promise resolving to a function.',
           );
         }
-        death(() => pTry(shutdown).catch(logError));
+        death((signal, err) =>
+          pTry(() => shutdown(signal, err)).catch(logError),
+        );
       }, logError);
     },
   );
