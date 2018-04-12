@@ -30,7 +30,7 @@
     "lint-staged": "^7.0.0",
     "minimist": "^1.2.0",
     "p-map": "^1.2.0",
-    "prettier": "1.11.1",
+    "prettier": "1.12.0",
     "read-pkgs": "^1.0.1",
     "rimraf": "^2.6.2",
     "rollup": "^0.57.1",
