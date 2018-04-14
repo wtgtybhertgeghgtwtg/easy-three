@@ -1,10 +1,8 @@
 // @flow
-import type {Config as BaseConfig, ConfigMap} from 'env-and-files';
+import type {Config as _Config, ConfigMap} from 'env-and-files';
+import typeof BaseConfig from './baseConfig';
 
-export type Config<CMap: ConfigMap> = BaseConfig<{
-  logger: {level: string, pretty: string},
-  ...CMap,
-}>;
+export type Config<CMap: ConfigMap> = _Config<{...BaseConfig, ...CMap}>;
 
 export type LogFunction = (obj: Object | string, message?: string) => void;
 

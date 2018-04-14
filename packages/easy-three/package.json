@@ -7,6 +7,7 @@
     "url": "https://github.com/wtgtybhertgeghgtwtg/easy-three/issues"
   },
   "dependencies": {
+    "assign-deep": "^0.4.7",
     "death": "^1.1.0",
     "env-and-files": "^5.0.2",
     "isobject": "^3.0.1",
