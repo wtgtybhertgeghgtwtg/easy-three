@@ -55,9 +55,9 @@
   "scripts": {
     "build": "node scripts/build",
     "clean": "rimraf coverage packages/*/dist",
-    "lint": "eslint . && flow && prettier --l \"{examples,packages}/*/{src,__tests__}/**/*.js\"",
-    "test": "jest --config ./scripts/jest/config.source.js",
-    "test-dist": "jest --config ./scripts/jest/config.dist.js"
+    "lint": "eslint . && flow && prettier --l \"{examples,packages}/*/{__{mocks,tests}__,src}/**/*.js\"",
+    "test": "jest --config scripts/jest/config.source.js",
+    "test-dist": "jest --config scripts/jest/config.dist.js"
   },
   "workspaces": [
     "{examples,packages}/*"
