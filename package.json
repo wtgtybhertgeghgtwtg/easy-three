@@ -40,10 +40,6 @@
   "engines": {
     "node": ">=4"
   },
-  "files": [
-    "dist",
-    "src"
-  ],
   "license": "MIT",
   "private": true,
   "repository": {
