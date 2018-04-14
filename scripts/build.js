@@ -5,8 +5,6 @@ const path = require('path');
 const readPkgs = require('read-pkgs');
 const {rollup} = require('rollup');
 const babel = require('rollup-plugin-babel');
-const closureCompilerJs = require('rollup-plugin-closure-compiler-js');
-const prettier = require('rollup-plugin-prettier');
 const write = require('write');
 
 const cwd = process.cwd();
@@ -23,26 +21,20 @@ readPkgs('packages/*', {cwd}).then(pkgs => {
     const bundle = await rollup({
       external: [...builtinModules, ...Object.keys(pkg.dependencies)],
       input: path.resolve(cwd, directory, 'src/index.js'),
-      plugins: [
-        babel(),
-        closureCompilerJs({
-          applyInputSourceMaps: false,
-          assumeFunctionWrapper: true,
-          compilationLevel: 'SIMPLE',
-          env: 'CUSTOM',
-          languageOut: 'ECMASCRIPT6_STRICT',
-          processCommonJsModules: false,
-          renaming: false,
-        }),
-        prettier(),
-      ],
+      plugins: [babel()],
     });
-    const file = path.resolve(cwd, directory, pkg.main);
+    const mainFile = path.resolve(cwd, directory, pkg.main);
+    const moduleFile = path.resolve(cwd, directory, pkg.module);
     await bundle.write({
-      file,
+      file: mainFile,
       format: 'cjs',
       sourcemap: true,
     });
-    await write(`${file}.flow`, indexJsFlow);
+    await write(`${mainFile}.flow`, indexJsFlow);
+    await bundle.write({
+      file: moduleFile,
+      format: 'es',
+      sourcemap: true,
+    });
   });
 });
