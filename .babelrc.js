@@ -8,6 +8,5 @@ module.exports = {
       },
     ],
     '@babel/preset-flow',
-    '@babel/preset-stage-3',
   ],
 };
