@@ -87,7 +87,7 @@ describe('init', () => {
 
     it('logs a ConfigError if it there is one.', done => {
       const start = jest.fn();
-      pino.__setErrorFunc(error => {
+      pino.__setFatalFunc(error => {
         expect(error.message).toEqual('Configuration could not be loaded.');
         expect(start).not.toHaveBeenCalled();
         done();
@@ -120,7 +120,7 @@ describe('init', () => {
 
     it('logs the error if "start" throws.', done => {
       const message = 'Some message.';
-      pino.__setErrorFunc(error => {
+      pino.__setFatalFunc(error => {
         expect(error.message).toEqual(message);
         done();
       });
@@ -131,7 +131,7 @@ describe('init', () => {
 
     it('logs the error if "start" rejects.', done => {
       const message = 'Some message.';
-      pino.__setErrorFunc(error => {
+      pino.__setFatalFunc(error => {
         expect(error.message).toEqual(message);
         done();
       });
