@@ -32,7 +32,7 @@
   "name": "easy-three",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wtgtybhertgeghgtwtg/easy-three/tree/master/packages/easy-three"
+    "url": "https://github.com/wtgtybhertgeghgtwtg/easy-three"
   },
   "scripts": {},
   "version": "0.0.0-semantic-release"
