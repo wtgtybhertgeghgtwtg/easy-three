@@ -31,7 +31,7 @@ export default function init<CMap: ConfigMap>(
     logger.trace('The logger has been initialized.');
     if (error) {
       return logger.fatal(
-        {error},
+        error,
         'Configuration could not be loaded.  Application will not start.',
       );
     }
@@ -47,14 +47,14 @@ export default function init<CMap: ConfigMap>(
         }
         death((signal, err) => {
           if (err) {
-            logger.fatal({error: err}, 'Aborting due to fatal error.');
+            logger.fatal(err, 'Aborting due to fatal error.');
           }
           logger.info({signal}, 'Shutting down.');
           pTry(() => shutdown(signal, err)).then(
             () => logger.info('The application has been gracefully shut down.'),
             shutdownError =>
               logger.error(
-                {error: shutdownError},
+                shutdownError,
                 'An error was encountered while attempting to shut down.',
               ),
           );
@@ -62,7 +62,7 @@ export default function init<CMap: ConfigMap>(
       },
       startError =>
         logger.fatal(
-          {error: startError},
+          startError,
           'An error was encountered while attempting to initialize.',
         ),
     );
