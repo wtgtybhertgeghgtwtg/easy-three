@@ -13,10 +13,10 @@
   },
   "description": "An example using `fastify`.",
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.42",
-    "@babel/node": "^7.0.0-beta.42",
-    "@babel/preset-env": "^7.0.0-beta.42",
-    "@babel/preset-flow": "^7.0.0-beta.42"
+    "@babel/core": "^7.0.0-beta.46",
+    "@babel/node": "^7.0.0-beta.46",
+    "@babel/preset-env": "^7.0.0-beta.46",
+    "@babel/preset-flow": "^7.0.0-beta.46"
   },
   "engines": {
     "node": ">=6"
