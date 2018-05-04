@@ -36,9 +36,6 @@
     "rollup-plugin-babel": "^4.0.0-beta.4",
     "write": "^1.0.3"
   },
-  "engines": {
-    "node": ">=4"
-  },
   "license": "MIT",
   "private": true,
   "repository": {
