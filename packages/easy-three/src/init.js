@@ -25,10 +25,7 @@ export default function init<CMap: ConfigMap>(
   assert(typeof start === 'function', '"start" must be a function.');
   return loadConfig(assignDeep(baseConfig, configMap)).then(
     config => {
-      const logger = pino({
-        level: config.logger.level || 'info',
-        prettyPrint: config.logger.pretty === 'true',
-      });
+      const logger = pino({level: config.logger.level || 'info'});
       logger.trace('The logger has been initialized.');
       logger.debug('Configuration has been loaded.');
       return pTry(() => start(config, logger)).then(

@@ -37,35 +37,13 @@ describe('init', () => {
     beforeEach(() => {
       jest.clearAllMocks();
       delete process.env.LOG_LEVEL;
-      delete process.env.LOG_PRETTY;
-    });
-
-    // Terrible test name.
-    it('defaults to non-pretty "info".', async () => {
-      await init({}, () => () => {});
-      expect(pino).toHaveBeenCalledWith({
-        level: 'info',
-        prettyPrint: false,
-      });
     });
 
     it('passes "LOG_LEVEL" as the log level.', async () => {
       const logLevel = 'trace';
       process.env.LOG_LEVEL = logLevel;
       await init({}, () => () => {});
-      expect(pino).toHaveBeenCalledWith({
-        level: logLevel,
-        prettyPrint: false,
-      });
-    });
-
-    it('is pretty if "LOG_PRETTY" equals true.', async () => {
-      process.env.LOG_PRETTY = 'true';
-      await init({}, () => () => {});
-      expect(pino).toHaveBeenCalledWith({
-        level: 'info',
-        prettyPrint: true,
-      });
+      expect(pino).toHaveBeenCalledWith({level: logLevel});
     });
   });
 
