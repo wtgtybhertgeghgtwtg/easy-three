@@ -16,5 +16,5 @@ rules:
   import/no-extraneous-dependencies:
     - error
     - devDependencies:
-      - "**/{scripts,__tests__}/**/*.js"
+      - "**/{__mocks__,__tests__,scripts}/**/*.js"
   no-underscore-dangle: 0
