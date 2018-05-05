@@ -16,7 +16,8 @@
     "@babel/core": "^7.0.0-beta.46",
     "@babel/node": "^7.0.0-beta.46",
     "@babel/preset-env": "^7.0.0-beta.46",
-    "@babel/preset-flow": "^7.0.0-beta.46"
+    "@babel/preset-flow": "^7.0.0-beta.46",
+    "pino-pretty": "^1.0.1"
   },
   "engines": {
     "node": ">=6"
@@ -29,7 +30,7 @@
     "url": "https://github.com/wtgtybhertgeghgtwtg/easy-three"
   },
   "scripts": {
-    "start": "babel-node src"
+    "start": "babel-node src | pino-pretty"
   },
   "version": "0.0.0"
 }

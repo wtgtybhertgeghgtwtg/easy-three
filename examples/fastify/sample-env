@@ -1,6 +1,4 @@
 # Set a log level to use, instead of the default "info".
 LOG_LEVEL=trace
-# Make the logs formatted.
-LOG_PRETTY=true
 # Use port 4000.
 PORT=4000
