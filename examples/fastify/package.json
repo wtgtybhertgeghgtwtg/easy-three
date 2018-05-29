@@ -13,10 +13,10 @@
   },
   "description": "An example using `fastify`.",
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.46",
-    "@babel/node": "^7.0.0-beta.46",
-    "@babel/preset-env": "^7.0.0-beta.46",
-    "@babel/preset-flow": "^7.0.0-beta.46",
+    "@babel/core": "^7.0.0-beta.49",
+    "@babel/node": "^7.0.0-beta.49",
+    "@babel/preset-env": "^7.0.0-beta.49",
+    "@babel/preset-flow": "^7.0.0-beta.49",
     "pino-pretty": "^1.0.1"
   },
   "engines": {
@@ -30,7 +30,8 @@
     "url": "https://github.com/wtgtybhertgeghgtwtg/easy-three"
   },
   "scripts": {
-    "start": "babel-node src | pino-pretty"
+    "prestart": "yarn workspace easy-three build -s",
+    "start": "babel-node src | pino-pretty -cnt"
   },
   "version": "0.0.0"
 }

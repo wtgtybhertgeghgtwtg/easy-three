@@ -16,6 +16,8 @@
   },
   "description": "Initialize an application and shut it down gracefully.",
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.49",
+    "@wtg/scripts": "^1.1.0",
     "abstract-logging": "^1.0.0",
     "object.map": "^1.0.1",
     "semantic-release": "^15.1.4",
@@ -36,6 +38,8 @@
     "type": "git",
     "url": "https://github.com/wtgtybhertgeghgtwtg/easy-three/tree/master/packages/easy-three"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "wtg build"
+  },
   "version": "0.0.0-semantic-release"
 }

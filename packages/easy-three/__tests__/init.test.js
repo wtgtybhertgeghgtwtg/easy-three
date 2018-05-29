@@ -45,6 +45,11 @@ describe('init', () => {
       await init({}, () => () => {});
       expect(pino).toHaveBeenCalledWith({level: logLevel});
     });
+
+    it('defaults to "info" if "LOG_LEVEL" is not defined.', async () => {
+      await init({}, () => () => {});
+      expect(pino).toHaveBeenCalledWith({level: 'info'});
+    });
   });
 
   describe('initialization the application', () => {
