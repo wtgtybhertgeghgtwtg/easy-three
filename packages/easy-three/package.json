@@ -12,7 +12,7 @@
     "env-and-files": "^5.0.2",
     "isobject": "^3.0.1",
     "p-try": "^1.0.0",
-    "pino": "^4.15.0"
+    "pino": "^5.0.0"
   },
   "description": "Initialize an application and shut it down gracefully.",
   "devDependencies": {
