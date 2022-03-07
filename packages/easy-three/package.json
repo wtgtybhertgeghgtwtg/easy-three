@@ -16,7 +16,7 @@
   },
   "description": "Initialize an application and shut it down gracefully.",
   "devDependencies": {
-    "semantic-release": "^15.1.4",
+    "semantic-release": "^19.0.0",
     "semantic-release-monorepo": "^6.0.0"
   },
   "engines": {
